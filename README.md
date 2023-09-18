@@ -326,13 +326,38 @@ less config.tcl
 
 <img width="508" alt="268485849-e5af433c-d0e8-4bb0-ac80-1001a2fc3b04" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/917ad253-9d04-4e56-90be-ff6b210e9ed6">
 
+* Steps to run floor plan using Openlane
+````less README.md````
+![Screenshot from 2023-09-18 20-06-43](https://github.com/lalithlochanr/pes_pd/assets/108328466/5fecbdf0-dd2f-49e7-bc07-7c3e92f2e100)
 
+![Screenshot from 2023-09-18 20-06-32](https://github.com/lalithlochanr/pes_pd/assets/108328466/14d2c64c-f53a-4d97-9e06-4028cfe36e5c)
 
+````less floorplan.tcl````
+![Screenshot from 2023-09-18 20-08-32](https://github.com/lalithlochanr/pes_pd/assets/108328466/5c572cec-4a42-44f6-871b-e8069e090a2c)
 
+````run_floorplan````
+![Screenshot from 2023-09-18 20-27-25](https://github.com/lalithlochanr/pes_pd/assets/108328466/fa4e24d9-7bb7-4439-9fbd-bec60b5f53c2)   
 
+![Screenshot from 2023-09-18 20-54-41](https://github.com/lalithlochanr/pes_pd/assets/108328466/4faaa77a-c430-4681-84fd-3a9006feb0a7)
 
+-Use nano file open to make required changes into code
+![Screenshot from 2023-09-18 20-54-07](https://github.com/lalithlochanr/pes_pd/assets/108328466/0fd729bb-0270-4332-94d8-4747d5374071)
 
+````run_floorplan```` in openlane
+
+* Review floorplan layout in Magic
+````
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+````
+![Screenshot from 2023-09-18 21-26-21](https://github.com/lalithlochanr/pes_pd/assets/108328466/3d29fbc5-288a-4662-aa89-644dbab727fd)
+
+![Screenshot from 2023-09-18 21-30-42](https://github.com/lalithlochanr/pes_pd/assets/108328466/f3aa8216-6eb8-48de-a20e-5660308ebfeb)
     
 </details>
 
+<details>
+  <summary>Library Binding and Placement</summary>
+  Netlist binding and intial place Design
+  
+</details>
 
