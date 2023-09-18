@@ -415,16 +415,16 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 ![Screenshot from 2023-09-19 03-30-18](https://github.com/lalithlochanr/pes_pd/assets/108328466/98fcd65e-f1da-4392-9755-cf2d4f4e6071)
 
-* Cell design and characterixation flows
+</details>
+
+<details>
+  <summary>Cell design and characterixation flows</summary>
+* Inputs for design flow
+- The cell design process is a fundamental stage in semiconductor chip development. It involves the systematic creation and optimization of discrete digital logic cells that make up a standard cell library. These libraries house pre-designed components like logic gates and flip-flops, essential for building integrated circuits. During this process, critical elements such as Process Design Kits (PDK), Design Rule Checking (DRC), Layout Versus Schematic (LVS) rules, SPICE models, and user-defined specifications are incorporated into the library. User-defined parameters, like pin placement and gate length, are carefully integrated by library developers to tailor the library to specific project requirements, ensuring a robust foundation for chip design and manufacturing.  
 
 
 
 
-
-
-
-
-
-
+  
 </details>
 
