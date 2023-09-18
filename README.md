@@ -1,4 +1,4 @@
-![Screenshot 2023-09-19 041946](https://github.com/lalithlochanr/pes_pd/assets/108328466/8220dd66-4aa8-42f9-8d37-09e2306082c4)# pes_pd
+# pes_pd
 
 # Day 1 - Inception of Open-Source EDA, OpenLANE & Sky130 PDK
 
@@ -476,24 +476,25 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
   - input and output waveform from which delay can be calculated
   - red - in_rise & blue - out_rise
 
-  ![image](https://github.com/lalithlochanr/pes_pd/assets/108328466/104904a2-41cc-496e-a748-69ec5a519249)
+  ![Screenshot 2023-09-19 042224](https://github.com/lalithlochanr/pes_pd/assets/108328466/156ab3da-15c6-445a-a7d7-a68adb6de68f)
   (definition 7 & 8)
   - red - in_fall & blue - out_fall
 
 
+- Propagation Delay
+- The time difference between when the transitional input reaches 50% of its final value and when the output reaches 50% of its final value.
+- Propagation delay=time(out_fall_thr)-time(in_rise_thr)
+  - the propagation delay can be calulated by following the timing threshold definitions
+    ![Screenshot 2023-09-19 042626](https://github.com/lalithlochanr/pes_pd/assets/108328466/4cf33d86-08f1-49ee-b2a6-38dfc31d4d95)
+  - negative delay is not possible and is obtained on choosing of poor threshold vaalues so should careful while choosing them
+  - Delay=-42ps
+    ![Screenshot 2023-09-19 042656](https://github.com/lalithlochanr/pes_pd/assets/108328466/a9bf99be-e12d-4bc2-9c5d-9f7418f012a7)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Transistion Time
+- The time it takes the signal to move between states is the transition time, where the time is measured between 10% and 90% or 20% to 80% of the signal levels.
+- Rise transition time = time(slew_high_rise_thr) - time (slew_low_rise_thr)
+- Fall transition time = time(slew_high_fall_thr) - time (slew_low_fall_thr)
+    - the threshold definitions are mentioned below in the image
+      ![Screenshot 2023-09-19 042556](https://github.com/lalithlochanr/pes_pd/assets/108328466/e4f0b920-051d-44cb-8595-b0646c6428a3)
   
 </details>
