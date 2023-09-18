@@ -79,6 +79,32 @@
 <details>
   <summary>Get familiar to open-source EDA tools</summary>
 
+  ![Screenshot from 2023-09-18 11-19-47](https://github.com/lalithlochanr/pes_pd/assets/108328466/5ad003c1-9db5-4287-bcae-92915fc505b4)  
+
+  ![Screenshot from 2023-09-18 11-22-42](https://github.com/lalithlochanr/pes_pd/assets/108328466/932e77c7-949d-48a8-b9c9-dc17ed3b0d65)
+
+  ![Screenshot from 2023-09-18 11-25-26](https://github.com/lalithlochanr/pes_pd/assets/108328466/d82db253-c151-4370-a34d-8872ffa3a41e)
+
+
+- skywate-pdk : all pdk related files  
+- open_pdks : set of scrips and files that converts foundry level pdks to be compatible with open source pda tools  
+- sky130A : variant of pdk.
+- libs.tech : specific to technology
+- libs.ref : specific to tools
+
+
+  * Design Preparation Steps
+
+  ````
+  docker
+  ./flow.tcl -interactive
+  package require openlane 0.9
+  prep -design picorv32a
+  run_synthesis
+  run_floorplan
+  ````
+
+
 
 
 
