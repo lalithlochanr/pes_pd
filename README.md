@@ -210,6 +210,23 @@ less config.tcl
 
 <details>
   <summary>Chip floor planning considertions </summary>
+  <details>
+    <summary>Chip Floor Planning considerations</summary>
+    * Utilization Factor & Aspect Ratio
+    - How do we find W & H?
+
+    <img width="416" alt="268482689-88e3af4a-aa59-4e7d-811f-6188bae9a3a6" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/1f34ca15-3d37-473d-9f11-40264edd30d9">
+
+    
+
+
+
+
+
+
+
+    
+  </details>
 </details>
 
 
