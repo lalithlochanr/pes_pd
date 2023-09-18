@@ -1,4 +1,4 @@
-# pes_pd
+<img width="579" alt="268483999-1c574b07-a6b5-452a-bce9-6921a89db806" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/f4974bcf-a975-4222-840f-491c2f6b532d"># pes_pd
 
 # Day 1 - Inception of Open-Source EDA, OpenLANE & Sky130 PDK
 
@@ -245,22 +245,86 @@ less config.tcl
       - we have taken aspect ratio to be 1.
 
 
-![Screenshot 2023-09-18 191535](https://github.com/lalithlochanr/pes_pd/assets/108328466/0abc7b79-b265-43c3-ab21-0acac23d5b86)
+![Screenshot 2023-09-18 191535](https://github.com/lalithlochanr/pes_pd/assets/108328466/0abc7b79-b265-43c3-ab21-0acac23d5b86)  
 
-  * Concept of Pre-Placed cells
-    - Two different blocks and implementation of it seperately
+  * Concept of Pre-Placed cells  
+    - Two different blocks and implementation of it seperately  
 
-      <img width="547" alt="268483320-afe3334d-9e9d-4da0-9d79-a1d25c2c9a71" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/4d64ac82-096b-4eef-a957-74268833ba4d">
-
-
-      ![Screenshot 2023-09-18 191856](https://github.com/lalithlochanr/pes_pd/assets/108328466/9ab8571e-25ce-4143-83c1-045c2c5115e4)
+      <img width="547" alt="268483320-afe3334d-9e9d-4da0-9d79-a1d25c2c9a71" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/4d64ac82-096b-4eef-a957-74268833ba4d">  
 
 
+      ![Screenshot 2023-09-18 191856](https://github.com/lalithlochanr/pes_pd/assets/108328466/9ab8571e-25ce-4143-83c1-045c2c5115e4)  
+
+* Locations of Pre-Placed cells  
+  - Automatic placing does not try to move these once placed  
     
+    ![Screenshot 2023-09-18 192341](https://github.com/lalithlochanr/pes_pd/assets/108328466/9733f739-d2a2-4180-b74b-241fc367a40a)  
 
+* Implementation of pre-placed cells is one time and can be reused multiple times.  
+  
+![Screenshot 2023-09-18 192738](https://github.com/lalithlochanr/pes_pd/assets/108328466/d4bb68d6-a741-4fec-a6c8-3dbc840fc2b5)  
 
+* Decoupling capacitors
+  - Decoupling capacitors are a fundamental tool in ensuring the reliable and noise-free operation of digital circuits and ICs. Properly selected and placed decoupling capacitors can help prevent signal integrity issues, reduce electromagnetic interference (EMI), and improve the overall performance and reliability of electronic systems.
+ 
+<img width="577" alt="268483690-b2a968d9-b686-4b3a-8cc1-46e24a69d4fe" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/36b3a3f2-9834-4923-ac4b-dedebe8c2fc2">  
 
+- If Vdd' goes below the noise margin, due to Rdd and Ldd, the logic '1' at the output of circuit wont be detected as logic '1' at the input of the circuit following this circuit.
 
+-  Noise margin summary
+<img width="462" alt="268483885-87f2781e-2052-4a53-b557-ede8d9032e33" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/f211bb1c-19de-4223-ad1e-7e060dc82311">
+
+* Having a large distance from the power supply and the main circuit has a disadvantage as there are multiple voltage drops happening before it reaches the main circuit giving a less voltage at the main circuit due to voltage drops therefore we cannot gaurantee that our logic gates in the circuit are getting either a high voltage(logic 1) or a low voltage(logic 0) or a danger region or gray region(Either Logic can go to 1 or 0 giving high or low volts) hence we have a disadvantage of Voltage being far from our circuit design
+
+* To solve this we use Decoupling Capacitors
+
+- they are huge capacitors completely filled with charge,therefore if our main voltage is source is 1v our deocupling capacitors also get charged to 1V and when discharged it again replenishes using main power supply.
+
+- <img width="579" alt="268483999-1c574b07-a6b5-452a-bce9-6921a89db806" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/869cd4b1-bc28-48f1-a78b-fd942254f01c">
+
+- surround the preplaced cells with the decoupling capacitors in order to keep the current flow as required to not be altered with respect to voltage drops. Ensuring each preplaced cells are getting the supply from the Decoupling capacitors
+
+<img width="415" alt="268484055-c2bee96c-6677-4295-913a-1d2ba3b720fa" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/0d1d2a3e-4253-48a9-94b0-658933a9e070">
+
+* Power Planning
+  - Power planning involves the management of power distribution, delivery, and consumption in an IC to ensure its proper functioning and efficiency.
+ 
+    <img width="322" alt="268484173-8e51df59-d182-46ef-96b3-a230f46be2ab" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/5b494508-a173-46e7-b92a-8b804c530cd3">
+
+- In the context of the provided circuit, which employs decoupling capacitors, we intend to transform it into a reusable Macro module. This Macro module is replicated numerous times across the chip, resulting in a distinct current requirement for each instance of the Macro. Within each Macro, there are two distinct functions: one acts as a driver, and the other as a loader. Both the driver and loader in each Macro are equipped with their respective decoupling capacitors. Our objective is to ensure that the signal transmitted from the driver to the loader within each Macro maintains its integrity along the specific interconnecting line.  
+
+<img width="432" alt="268484345-5749c54e-6071-46a7-b5f0-881e67c62d1b" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/111897fb-9d92-4cea-b1f8-0d4ad2771b5b">
+
+- The connection between the driver and the load must receive its power directly from the power supply, as it is not feasible to insert decoupling capacitors in this intermediate section. This arrangement introduces the potential for voltage drop because the power supply is situated some distance away from the signal line  
+
+- To illustrate, let's examine a 16-bit bus connected to an inverter. When we feed logic signals into the inverter, the output will be the inverted value of the input. Consequently, any capacitors initially charged to logic 1 will discharge to logic 0, and conversely, capacitors initially charged to logic 0 will switch to logic 1.  
+
+<img width="453" alt="268484398-7ab5589a-5f16-4b9d-9d2c-bf5a26820f51" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/130b64ad-4c43-445e-9902-28ecbbf73662">
+
+<img width="437" alt="268484424-a137db98-0906-43ff-9eb4-86599a10993a" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/eeb7871c-a2c9-496c-a266-1adf1aa34b21">
+
+<img width="440" alt="268484479-e6da813d-05d5-49f1-959d-72274e1e4410" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/452011dc-478f-4fc1-a76e-e501a5d5edff">
+
+- Multiple supply lines are created to fulfill any power requirement.
+
+* Pin placement & Logical Cell placement blockage
+
+- Pin placement, often referred to as I/O (Input/Output) pad placement, involves the task of defining the positions and organization of input and output pins on an integrated circuit (IC) or printed circuit board (PCB). These pins serve the purpose of establishing connections with external devices or other components.
+  <img width="443" alt="268485435-bb5f3c42-4a93-4410-9d14-c88622057eeb" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/b4e6e2d3-4eab-4c64-a8d2-1d1f89f60b69">
+
+- Other designs using different implementation of clocks with preplaced cells
+  
+  <img width="465" alt="268485547-932631eb-512c-416a-828a-6246dcfffd82" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/f00a4f8c-2a5a-4e64-a049-b3820bb1739e">
+  <img width="471" alt="268485634-08172ee4-f587-43b3-aa68-f303b8875487" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/8fcf86b7-82d5-4db6-bd6a-e226b92b17ad">  
+
+  - Pin placement
+   
+![Screenshot 2023-09-18 195627](https://github.com/lalithlochanr/pes_pd/assets/108328466/8c2d2c7c-4946-4be5-bcab-05138eab6ab7)
+
+- Following pin placement, it's essential to ensure that no automated placement or routing tool assigns cells to a specific region. This particular area is reserved for maintaining gaps between each clock port, and it should be prohibited from accommodating any cells. This restriction is implemented through a process known as logical cell placement blockage.
+- Logical cell placement blockage is crucial for optimizing signal routing and minimizing delays. By creating these exclusion zones, it helps maintain signal integrity and reduces the risk of timing violations in high-performance integrated circuits.
+
+<img width="508" alt="268485849-e5af433c-d0e8-4bb0-ac80-1001a2fc3b04" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/917ad253-9d04-4e56-90be-ff6b210e9ed6">
 
 
 
