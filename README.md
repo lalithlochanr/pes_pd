@@ -498,3 +498,15 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
       ![Screenshot 2023-09-19 042556](https://github.com/lalithlochanr/pes_pd/assets/108328466/e4f0b920-051d-44cb-8595-b0646c6428a3)
   
 </details>
+
+
+# Day 3 - Design library cell using Magic Layout and ngspice characterization
+
+<details>
+  <summary> Labs for CMOS inverter ngspice simulations</summary>
+
+* IO Placer
+
+
+  
+</details>
