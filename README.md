@@ -388,6 +388,33 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 * Need for libraries & characterization
 
+1. Logic Synthesis: This process takes the RTL (Register Transfer Level) description and transforms it into a configuration of gates that represents the original functionality of the design.
+
+2. Floorplanning: we import the Netlist generated from logic synthesis. During this phase, we determine the physical size and layout of the chip's core and die.
+
+3. Placement: placement involves arranging the logic cells obtained from logic synthesis onto the chip's surface. The goal is to meet initial timing requirements, typically by grouping faster cells together and considering the functional dependencies among cells.
+
+4. Clock Tree Synthesis (CTS): we design a clock distribution tree to ensure that the clock signal reaches all the logic cells at precisely the same time. This helps in synchronizing clocked elements such as flip-flops.
+
+5. Routing: routing involves creating interconnections between the logic cells. The routing process is influenced by the characteristics of the individual cells and must adhere to specific routing constraints.
+
+6. Static Timing Analysis (STA): This analysis determines critical timing parameters such as setup time, hold time, and the maximum achievable frequency of the circuit. STA ensures that the design meets its timing requirements and operates correctly.
+
+![Screenshot 2023-09-19 023349](https://github.com/lalithlochanr/pes_pd/assets/108328466/19587f8e-c7ee-447a-83a4-549564ebd84e)  
+![Screenshot 2023-09-19 023432](https://github.com/lalithlochanr/pes_pd/assets/108328466/8e6468c6-94ff-4356-87a0-76790a87ec91)  
+
+
+![Screenshot 2023-09-19 024830](https://github.com/lalithlochanr/pes_pd/assets/108328466/86412b04-555d-48cc-8344-80b42dc532fb)
+- The library consists of all the cells or gates required to model them as per requirement with the help of EDA tools.
+
+
+
+
+
+
+
+
+
 
 
 
