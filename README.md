@@ -357,7 +357,40 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 <details>
   <summary>Library Binding and Placement</summary>
-  Netlist binding and intial place Design
+  * Netlist binding and intial place Design
+  - Bind netlist with physical cells
   
+  ![Screenshot 2023-09-19 012133](https://github.com/lalithlochanr/pes_pd/assets/108328466/7d936ced-39b4-484f-8e8b-451f7ebd47bd)  
+
+  The library will have the information of shape, width, height and delay information of every cell required.
+
+ - Placement
+   - Stage where we estimate wire length and capaitance and based on that insert repeaters.
+  ![Screenshot 2023-09-19 012432](https://github.com/lalithlochanr/pes_pd/assets/108328466/8fef7b04-8e65-4779-bd1d-a255c4743bbe)
+
+* Optimize Placement using estimated wire length and capacitance with final optimization  
+- Repeaters essentially regenerate the original signal, ensuring that it maintains its quality and integrity as it travels.  
+  - This placement of the repeater ensures that whatever information is sent to Din2 is faithfully retained by FF1 of the 2nd stage, thereby maintaining signal integrity.  
+- Slew rate (SLEW) is influenced by the capacitance value in the circuit. When a higher capacitance is used, it increases the time it takes to charge or discharge the capacitor, leading to slower signal transitions and potentially compromising signal quality.  
+  - Between Din2 and FF1, repeaters should be added along this transmission path to address the slew rate issue and improve signal integrity.  
+
+- Stage 1:  
+![Screenshot 2023-09-19 022519](https://github.com/lalithlochanr/pes_pd/assets/108328466/c254fe20-f115-42bb-9d2c-1affc8173f40)  
+
+- Stage 2:  
+![Screenshot 2023-09-19 022616](https://github.com/lalithlochanr/pes_pd/assets/108328466/69faed36-a052-4274-9dff-ef23fc6caf43)  
+
+- Stage 3:  
+![Screenshot 2023-09-19 022649](https://github.com/lalithlochanr/pes_pd/assets/108328466/84672684-3a68-4fd5-ae33-1920376fc7d2)  
+
+- Stage 4:  
+![Screenshot 2023-09-19 022720](https://github.com/lalithlochanr/pes_pd/assets/108328466/a0dbb926-f869-4826-aae1-8b19fdd0fb54)  
+
+* Need for libraries & characterization
+
+
+
+
+
 </details>
 
