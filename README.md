@@ -407,8 +407,15 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ![Screenshot 2023-09-19 024830](https://github.com/lalithlochanr/pes_pd/assets/108328466/86412b04-555d-48cc-8344-80b42dc532fb)
 - The library consists of all the cells or gates required to model them as per requirement with the help of EDA tools.
 
+* Congestion aware Placement using RePIAce
+````run_placement````
+![Screenshot from 2023-09-19 03-03-01](https://github.com/lalithlochanr/pes_pd/assets/108328466/5654c0e0-ff58-4ebc-870b-3b00863a91a0)
 
+![Screenshot from 2023-09-19 03-30-44](https://github.com/lalithlochanr/pes_pd/assets/108328466/6c21ff37-92b8-4dfc-bc8f-f939947cd1c3)
 
+![Screenshot from 2023-09-19 03-30-18](https://github.com/lalithlochanr/pes_pd/assets/108328466/98fcd65e-f1da-4392-9755-cf2d4f4e6071)
+
+* Cell design and characterixation flows
 
 
 
