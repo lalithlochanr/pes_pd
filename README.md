@@ -1,4 +1,4 @@
-# pes_pd
+![Screenshot 2023-09-19 041946](https://github.com/lalithlochanr/pes_pd/assets/108328466/8220dd66-4aa8-42f9-8d37-09e2306082c4)# pes_pd
 
 # Day 1 - Inception of Open-Source EDA, OpenLANE & Sky130 PDK
 
@@ -422,9 +422,78 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 * Inputs for design flow
 - The cell design process is a fundamental stage in semiconductor chip development. It involves the systematic creation and optimization of discrete digital logic cells that make up a standard cell library. These libraries house pre-designed components like logic gates and flip-flops, essential for building integrated circuits. During this process, critical elements such as Process Design Kits (PDK), Design Rule Checking (DRC), Layout Versus Schematic (LVS) rules, SPICE models, and user-defined specifications are incorporated into the library. User-defined parameters, like pin placement and gate length, are carefully integrated by library developers to tailor the library to specific project requirements, ensuring a robust foundation for chip design and manufacturing.  
 
+* Cell Design Flow
+![Screenshot 2023-09-19 034415](https://github.com/lalithlochanr/pes_pd/assets/108328466/908b0208-6946-41ca-b285-ed1d2fbb7af5)
+
+![Screenshot 2023-09-19 034510](https://github.com/lalithlochanr/pes_pd/assets/108328466/8afae67a-e48a-4eee-bbe8-2133f9562b01)
+
+![Screenshot 2023-09-19 034623](https://github.com/lalithlochanr/pes_pd/assets/108328466/49a330f8-4e51-4837-a60d-9052adb11460)
+
+![Screenshot 2023-09-19 034652](https://github.com/lalithlochanr/pes_pd/assets/108328466/484c29e8-f0d2-4a66-94b6-b2db011a7034)
+
+- Libraries built on user defined specifications with respect to library defined cells.
+  (eg- contact defined on metal 3,4,5 layers, pin location, drawn gate length, etc)
+
+* Circuit design Steps
+  - By combining NMOS and PMOS transistors we can design the required circuit and can be derived in terms of Euler's Path and represented in terms of stick diagram. 
+![Screenshot 2023-09-19 035305](https://github.com/lalithlochanr/pes_pd/assets/108328466/f9d35b0e-d63c-4759-8c46-001f1d81632f)
+
+* Layout Design Steps
+- transform the stick diagram into a layout that adheres to the specified Design Rule Check (DRC) constraints
+- extraction of parasitic elements, which include characteristics like resistances and capacitances, from the layout
+- compile it into an extracted spice list
+
+![Screenshot 2023-09-19 040143](https://github.com/lalithlochanr/pes_pd/assets/108328466/79bcecee-4950-4476-b860-70094e99038f)
+
+![Screenshot 2023-09-19 040159](https://github.com/lalithlochanr/pes_pd/assets/108328466/398fa882-6ccf-4b1c-8314-37adbe069381)
+- Extracted spice list that needs to be characterized
+
+
+* Characterization flow
+
+![Screenshot 2023-09-19 040502](https://github.com/lalithlochanr/pes_pd/assets/108328466/fd8696d6-f552-4024-8a4a-217ff5f91329)
+
+![Screenshot 2023-09-19 040523](https://github.com/lalithlochanr/pes_pd/assets/108328466/b8f4c544-6ad7-44f6-b2f6-8fa4f5b0ab79)
+
+- GUNA - gives you the timing, power models.
+![Screenshot 2023-09-19 040600](https://github.com/lalithlochanr/pes_pd/assets/108328466/f0780d03-cf24-4b31-8bc0-2bfcdeeca809)
+
+</details>
+
+<details>
+  <summary> General timing characterization parameters</summary>
+- Timing threshold definition
+  - the defintions are associated with parts of the graphs defining the characteristics 
+  
+  ![Screenshot 2023-09-19 041710](https://github.com/lalithlochanr/pes_pd/assets/108328466/86377357-40f5-4bcd-9fd5-0f819980331e)
+  (the first four definitions)
+  - the red graph refers to rise waveform
+  - the blue graph refers to fall waveform
+
+  
+  ![Screenshot 2023-09-19 041946](https://github.com/lalithlochanr/pes_pd/assets/108328466/7b3a6a1a-970e-41b7-b64f-b26f01739600)
+  (definition 5 & 7)
+  - input and output waveform from which delay can be calculated
+  - red - in_rise & blue - out_rise
+
+  ![image](https://github.com/lalithlochanr/pes_pd/assets/108328466/104904a2-41cc-496e-a748-69ec5a519249)
+  (definition 7 & 8)
+  - red - in_fall & blue - out_fall
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   
 </details>
-
