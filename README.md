@@ -74,3 +74,33 @@
 ![Screenshot 2023-09-18 110225](https://github.com/lalithlochanr/pes_pd/assets/108328466/7040ba1f-1d37-4ab7-ba31-43393f0f16cd)
 
 </details>
+
+
+<details>
+  <summary>Get familiar to open-source EDA tools</summary>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</details>
+
