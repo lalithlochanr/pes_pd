@@ -209,14 +209,53 @@ less config.tcl
 # Day 2 - Good floorplan vs bad floorplan and introduction to library cells
 
 <details>
-  <summary>Chip floor planning considertions </summary>
-  <details>
-    <summary>Chip Floor Planning considerations</summary>
-    * Utilization Factor & Aspect Ratio
-    - How do we find W & H?
+<summary>Chip floor planning considertions </summary>
+   
+  * Utilization Factor & Aspect Ratio
+   
+  - How do we find W & H?
 
     <img width="416" alt="268482689-88e3af4a-aa59-4e7d-811f-6188bae9a3a6" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/1f34ca15-3d37-473d-9f11-40264edd30d9">
 
+  - Example
+
+    <img width="448" alt="268482742-092f2da8-868b-4b05-802c-c729f6504d63" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/5e1fbfd9-e633-4832-88b9-7f48dc51d7a1">
+
+  -convert into physical dimension
+  
+  <img width="417" alt="268482767-d1954fa7-ca86-4012-b785-d9daf431da7c" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/5bb47711-63ba-4b0f-ba87-8a47c3b7a3b1">
+
+  - give unit area for each logic gate
+
+    <img width="579" alt="268482840-bf87bf69-f41c-4d86-8022-9e2555b72e96" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/bff3b5bc-a348-477a-a37e-60ff29cb7029">
+
+    - we implment this die multiple times on the silicon wafer to increase the throughput
+    - implment the logic into the core,the logic cells occupied 100% of the core,thereby occupying Utilising 100% of the core
+
+      <img width="582" alt="268482900-658e9ab3-8fe3-450d-8558-70882c27fe71" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/99ee594f-ba58-48d3-b286-1827032f2ebc">  
+
+
+    * Utilization factor = Area occupied by netlist / Total area of core
+      - we have taken utilization factor to be 1.
+
+      ![Screenshot 2023-09-18 190913](https://github.com/lalithlochanr/pes_pd/assets/108328466/99f3e6bc-8065-4845-8efe-b154102b7cc3)
+
+    * Aspect ratio = Height / Width
+      -Aspect ratio refers to the ratio of the width to the height of a transistor. It is a critical parameter in the design and fabrication of integrated circuits.
+      - we have taken aspect ratio to be 1.
+
+
+![Screenshot 2023-09-18 191535](https://github.com/lalithlochanr/pes_pd/assets/108328466/0abc7b79-b265-43c3-ab21-0acac23d5b86)
+
+  * Concept of Pre-Placed cells
+    - Two different blocks and implementation of it seperately
+
+      <img width="547" alt="268483320-afe3334d-9e9d-4da0-9d79-a1d25c2c9a71" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/4d64ac82-096b-4eef-a957-74268833ba4d">
+
+
+      ![Screenshot 2023-09-18 191856](https://github.com/lalithlochanr/pes_pd/assets/108328466/9ab8571e-25ce-4143-83c1-045c2c5115e4)
+
+
     
 
 
@@ -225,8 +264,11 @@ less config.tcl
 
 
 
+
+
+
+
     
-  </details>
 </details>
 
 
