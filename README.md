@@ -1,4 +1,4 @@
-<img width="579" alt="268483999-1c574b07-a6b5-452a-bce9-6921a89db806" src="https://github.com/lalithlochanr/pes_pd/assets/108328466/f4974bcf-a975-4222-840f-491c2f6b532d"># pes_pd
+# pes_pd
 
 # Day 1 - Inception of Open-Source EDA, OpenLANE & Sky130 PDK
 
