@@ -700,3 +700,32 @@ similarly,
     ![Screenshot from 2023-09-20 22-59-50](https://github.com/lalithlochanr/pes_pd/assets/108328466/e43edbe5-83d1-4940-92e7-73ecfbc9c619)
     
 </details>
+
+<details>
+  <summary> Day 4 - Pre-layout timing analysis and importance of good clock tree</summary>
+  
+  <details>
+    <summary> Timing modelling using delay tables</summary>
+    * Convert grid info into track info
+    - Magic Layout into a std cell LEF
+    ````
+    less tracks.info
+    ````
+    ![Screenshot from 2023-09-21 00-57-57](https://github.com/lalithlochanr/pes_pd/assets/108328466/1d4ff8b6-4b9b-426f-9e6e-92fb7d998aff)
+
+    ![Screenshot from 2023-09-21 00-57-39](https://github.com/lalithlochanr/pes_pd/assets/108328466/ae025ebb-21c2-43d0-b879-d839e93caf39)
+    
+ -1st value indicates the offset and 2nd value indicates the pitch along provided direction
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </details>
+</details>
