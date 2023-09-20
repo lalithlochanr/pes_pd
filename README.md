@@ -2,6 +2,42 @@
 
 # Day 1 - Inception of Open-Source EDA, OpenLANE & Sky130 PDK
 
+
+<details>
+  <summary> Introduction  </summary>
+  
+  ![Screenshot from 2023-09-20 17-12-48](https://github.com/lalithlochanr/pes_pd/assets/108328466/ff7fd005-fda7-4b36-94d8-d632cbdaddb6)
+
+  - A semiconductor chip or integrated circuit(IC) is a complex electronic component that contains various elements to perform specific functions within electronic devices. Essential components to make up an IC are macros,Foundry IP's, IO pins and so on.
+
+1. Macros (Macro Cells):
+   - Predefined functional blocks for chip design.
+   - Types include standard cells, memory macros, IO macros, etc.
+   - Efficient building blocks for logic, memory, input/output functions.
+   - Saves time and effort for chip designers.
+
+2. Foundry IP (Intellectual Property):
+   - Sets of intellectual property provided by foundries.
+   - Includes standard cell libraries, memory compilers, interface IPs, and analog IPs.
+   - Optimized for specific manufacturing processes.
+   - Ensures reliable and efficient chip fabrication.
+   - Helps avoid designing critical components from scratch.
+
+3. IO Pins (Input/Output Pins):
+   - Pins for interfacing the chip with the external world using IO pads.
+   - Include input buffers, output drivers, voltage level shifters.
+   - Essential for connecting the chip to external devices or other chips.
+
+![Screenshot from 2023-09-20 17-24-36](https://github.com/lalithlochanr/pes_pd/assets/108328466/eb5ca2f9-cc53-415c-85e6-e14404f21b85)
+![Screenshot from 2023-09-20 17-24-56](https://github.com/lalithlochanr/pes_pd/assets/108328466/c27f217f-b909-4733-b4f2-82cd00565cfe)
+![Screenshot from 2023-09-20 17-25-29](https://github.com/lalithlochanr/pes_pd/assets/108328466/764720e3-4a90-4913-a1ef-f9bf81c069aa)  
+
+![Screenshot from 2023-09-20 17-29-36](https://github.com/lalithlochanr/pes_pd/assets/108328466/559d6449-3d24-404e-b2ff-b1573130359b)
+
+
+
+</details>
+
 <details>
   <summary>How to talk to computers </summary>
 
@@ -38,7 +74,8 @@
 
 <details>
   <summary>RISC-V flow</summar>
-* Flow:
+
+    * Flow:
     
   ![Screenshot 2023-09-18 103611](https://github.com/lalithlochanr/pes_pd/assets/108328466/a0323dbe-8072-4dcf-9f5d-f7dda3059180)  
 
