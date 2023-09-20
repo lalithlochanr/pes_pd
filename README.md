@@ -633,3 +633,69 @@ magic -T sky130A.tech sky130_inv.mag &
   
 </details>
 
+<details>
+  <summary> Sky130 Tech File </summary>
+
+  * Lab steps to create std cell layout and extract spice netlist
+  ````
+  pwd
+  extract all
+  ext2spice cthresh 0 rthresh 0
+  ext2spice
+  ````
+
+![Screenshot from 2023-09-20 19-36-05](https://github.com/lalithlochanr/pes_pd/assets/108328466/d8eeb50a-788d-4c72-a4f2-1a57e00b626b)
+
+![Screenshot from 2023-09-20 19-39-13](https://github.com/lalithlochanr/pes_pd/assets/108328466/4013931e-c928-4d3f-a241-bda501a02cb9)
+
+![Screenshot from 2023-09-20 19-38-59](https://github.com/lalithlochanr/pes_pd/assets/108328466/8e310ea7-8055-48e4-a689-5a236a74a061)
+
+- make the required changes into the file
+![Screenshot from 2023-09-20 20-11-40](https://github.com/lalithlochanr/pes_pd/assets/108328466/e2235e08-725c-4ac1-9b33-50eceb264e5c)
+
+![Screenshot from 2023-09-20 20-11-17](https://github.com/lalithlochanr/pes_pd/assets/108328466/3c88db15-7ccb-4e75-8dae-8773ad7486a3)
+
+![Screenshot from 2023-09-20 20-16-10](https://github.com/lalithlochanr/pes_pd/assets/108328466/cae6ce24-a83c-497a-8ed7-7be8af96ddd7)
+
+![Screenshot from 2023-09-20 20-15-54](https://github.com/lalithlochanr/pes_pd/assets/108328466/bdbf1de8-9c53-43eb-b088-d2452254ece7)
+
+- rise time = 80% of rise time - 20% of rise time = 0.41ns
+  ![Screenshot from 2023-09-20 20-48-20](https://github.com/lalithlochanr/pes_pd/assets/108328466/44bcc22d-8949-4e53-88a7-fb9944b01953)
+
+- fall time = 20% of fall time - 80% of fall time = 0.58ns
+  ![Screenshot from 2023-09-20 20-53-04](https://github.com/lalithlochanr/pes_pd/assets/108328466/34d22b96-a9a0-4ca8-8a69-8890afe14f12)
+
+similarly,
+- Cell rise delay = 50% of output - 50% of input = 0.38ns
+- Cell fall delay = 50% of output - 50% of input = 0.45ns
+
+- Get the required files
+  ````
+  wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+  magic -d XR
+  tar xfz drc_tests.tgz
+  cd drc_tests
+  ````
+  -In toplevel open files and open met3.mag
+  -In tkcon,
+  ````
+  drc why
+  ````
+  ![Screenshot from 2023-09-20 21-34-22](https://github.com/lalithlochanr/pes_pd/assets/108328466/b904e05b-e680-4155-b351-303227f3469a)
+
+  - To see contacts
+    ````
+    cif see VIA2
+    ````
+    ![Screenshot from 2023-09-20 21-50-45](https://github.com/lalithlochanr/pes_pd/assets/108328466/e5b07250-7170-4711-b33d-8cee07cb0d9e)
+
+  - to checck for dimensions of area- select area & type box in tkcon and ```` drc check````
+  - There are DRC errors so to fix them
+  - open sky130A.tech file using an editor and search for poly.9 and make the changes
+    ![Screenshot from 2023-09-20 22-12-08](https://github.com/lalithlochanr/pes_pd/assets/108328466/b860880a-27f2-44bd-90a9-65fb2628dbf8)
+    ![Screenshot from 2023-09-20 22-16-04](https://github.com/lalithlochanr/pes_pd/assets/108328466/74079b08-2d67-4fab-9b0b-0a310f5559af)
+    ![Screenshot from 2023-09-20 22-25-05](https://github.com/lalithlochanr/pes_pd/assets/108328466/2e3fcef6-da2c-49ae-8f17-96291d304f34)
+    ![Screenshot from 2023-09-20 23-01-31](https://github.com/lalithlochanr/pes_pd/assets/108328466/d20dc6d1-2b46-4f65-a118-ec080c493d71)
+    ![Screenshot from 2023-09-20 23-02-50](https://github.com/lalithlochanr/pes_pd/assets/108328466/26b8f474-f991-40a4-9d58-c6373d226a07)
+    ![Screenshot from 2023-09-20 22-59-50](https://github.com/lalithlochanr/pes_pd/assets/108328466/e43edbe5-83d1-4940-92e7-73ecfbc9c619)
+</details>
