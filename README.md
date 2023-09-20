@@ -701,10 +701,9 @@ similarly,
     
 </details>
 
-<details>
-  <summary> Day 4 - Pre-layout timing analysis and importance of good clock tree</summary>
+# Day 4 - Pre-layout timing analysis and importance of good clock tree
   
-  <details>
+<details>
     <summary> Timing modelling using delay tables</summary>
     * Convert grid info into track info
     - Magic Layout into a std cell LEF
@@ -715,17 +714,83 @@ similarly,
 
     ![Screenshot from 2023-09-21 00-57-39](https://github.com/lalithlochanr/pes_pd/assets/108328466/ae025ebb-21c2-43d0-b879-d839e93caf39)
     
- -1st value indicates the offset and 2nd value indicates the pitch along provided direction
+ - 1st value indicates the offset and 2nd value indicates the pitch along provided direction
+ - press g in layout to get grid
+  ![Screenshot from 2023-09-21 01-10-01](https://github.com/lalithlochanr/pes_pd/assets/108328466/d170ec0b-f47e-4312-842c-f506bc94a863)
+
+
+  ```` grid 0.46um 0.34um 0.23um 0.17um````
+  - the width of the standard cell must be in odd multiples of x pitch
+![Screenshot from 2023-09-21 01-13-48](https://github.com/lalithlochanr/pes_pd/assets/108328466/ba28cccb-ffbd-4706-b255-d8a52d5420cf)
+
+  - To generate the cell LEF file from Magic Layout
+    - we save the modified layout
+    - we open the file and extract LEF, type the command in the tkcon window
+      
+  ````
+save sky130_vsdinv.mag
+magic -T sky130A.tech sky130_vsdinv.mag
+lef write
+````
+  ![Screenshot from 2023-09-21 01-32-38](https://github.com/lalithlochanr/pes_pd/assets/108328466/a9e9c489-4d15-4a89-b7fb-b3b55f7c2965)
+
+- Generate LEF file
+```` lef write```
+- terminal - ````less sky130_vsdinv.lef````
+![Screenshot from 2023-09-21 01-57-30](https://github.com/lalithlochanr/pes_pd/assets/108328466/e0cbf973-8eff-42d7-9459-448c25aa3fa3)
+
+````
+cp sky130_vsdinv.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+
+cp sky130_fd_sc_hd__* //home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+````
+![Screenshot from 2023-09-21 02-49-43](https://github.com/lalithlochanr/pes_pd/assets/108328466/993a5f1e-06e7-4783-ba81-f18471f0d0a7)
+
+![Screenshot from 2023-09-21 02-49-59](https://github.com/lalithlochanr/pes_pd/assets/108328466/47834e30-76f8-4b00-b059-32ba8596fa0f)
+
+
+````gedit config.tcl````
+![Screenshot from 2023-09-21 03-01-20](https://github.com/lalithlochanr/pes_pd/assets/108328466/221b6cad-01fc-4fd8-adc9-76ff114b33f3)
+![Screenshot from 2023-09-21 04-00-57](https://github.com/lalithlochanr/pes_pd/assets/108328466/3e63e5d9-b73d-410b-a807-b28844101ea7)
+
+
+- Now in openlane
+   ````
+  docker
+  ./flow.tcl -interactive
+  package require openlane 0.9
+  prep -design picorv32a -tag 18-09_12-32 -overwrite
+  set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+  add_lefs -src $lefs
+  run_synthesis
+  ````
+
+![Screenshot from 2023-09-21 03-55-15](https://github.com/lalithlochanr/pes_pd/assets/108328466/19798cf9-11bf-45c5-a046-72aa1cc89af6)
+![Screenshot from 2023-09-21 03-55-39](https://github.com/lalithlochanr/pes_pd/assets/108328466/abb488b6-12df-4fb2-9e06-bc523f88b4a0)
+![Screenshot from 2023-09-21 04-05-04](https://github.com/lalithlochanr/pes_pd/assets/108328466/b0471618-6112-44df-864c-3cd5e7564aa6)
+
+* Introduction to Delay Tables
+- Delay tables are indispensable components. Their primary function is to provide a structured framework for modeling and comprehending the intricacies of signal propagation delays inherent to logic gates and interconnections within a digital integrated circuit (IC). These tables assume a pivotal role in ensuring that the circuit operates within its prescribed timing specifications, such as meeting setup and hold time requirements. As a cornerstone of synchronous digital system design, delay tables are fundamental in achieving reliable and predictable circuit behavior. 
+- Primary purpose of the delay table for performing of timing analysis,synchronization,etc.
+
+![Screenshot from 2023-09-21 04-06-35](https://github.com/lalithlochanr/pes_pd/assets/108328466/f16cb2f0-2d01-45a0-bf72-4745096e63b1)
+![Screenshot from 2023-09-21 04-07-00](https://github.com/lalithlochanr/pes_pd/assets/108328466/57ef3a32-17de-4602-a1ff-e46206d185ae)
+![Screenshot from 2023-09-21 04-07-17](https://github.com/lalithlochanr/pes_pd/assets/108328466/00f1af5c-3553-4844-970e-a698bf7c1d6f)
+
+
+![Screenshot from 2023-09-21 04-18-55](https://github.com/lalithlochanr/pes_pd/assets/108328466/dce08360-2da2-4214-97ca-9dca661c4e73)
+
+````
+init_floorplan
+run_placement
+````
+-In terminal
+````
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/18-09_12-32/results/placement
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+````
+![Screenshot from 2023-09-21 04-30-37](https://github.com/lalithlochanr/pes_pd/assets/108328466/8afb6e5d-c2d4-4063-b6cf-3ad75f295071)
+![Screenshot from 2023-09-21 04-23-02](https://github.com/lalithlochanr/pes_pd/assets/108328466/a85fcb40-9ad7-4dd0-beb5-7b75ab2ac6f8)
+![Screenshot from 2023-09-21 04-25-04](https://github.com/lalithlochanr/pes_pd/assets/108328466/797a770d-d487-4e25-a7ad-d6e41c3dba49)
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </details>
 </details>
