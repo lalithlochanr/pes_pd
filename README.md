@@ -534,7 +534,102 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
   <summary> Labs for CMOS inverter ngspice simulations</summary>
 
 * IO Placer
+- An IO placer is a software tool used in semiconductor chip design's Place and Route (PnR) phase. It optimizes the placement of input/output (IO) pads or pins on the chip's physical layout, facilitating efficient signal routing, reduced signal delay, lower power consumption, and EMC compliance. The process is iterative, allowing adjustments to variables like pin configuration within the core area, transitioning from even distribution to alternative arrangements as needed for optimal chip performance.
+
+- In openlane, run the procedure until run_floorplan
+![Screenshot from 2023-09-20 18-10-05](https://github.com/lalithlochanr/pes_pd/assets/108328466/1ce0b1e6-b893-4f55-b917-a8dda22f194e)
+- You can observe the IO ports placed uniformly
+![Screenshot from 2023-09-20 18-11-14](https://github.com/lalithlochanr/pes_pd/assets/108328466/17d09e0f-6da5-4a11-9500-aa85a77eacda)
+
+- In the file floorplan.tcl
+![Screenshot from 2023-09-20 18-15-20](https://github.com/lalithlochanr/pes_pd/assets/108328466/4a4f3640-792d-44ca-bbb4-dbc2fe3fc30c)
+
+- change the mode from 1 to 2 
+````
+set ::env(FP_IO_MODE) 2
+run_floorplan
+````
+![Screenshot from 2023-09-20 18-10-05](https://github.com/lalithlochanr/pes_pd/assets/108328466/804e613c-2d76-4ec9-ab4f-33df6f3922ef)
+
+![Screenshot from 2023-09-20 18-36-31](https://github.com/lalithlochanr/pes_pd/assets/108328466/6f811dd1-1ef3-4be3-a400-cad5821d662d)
+- the ports are no longer equidistant
+
+- utilize git clone for cloning PMOS and NMOS spice models, a VSD standard cell design file will be generated within OpenLane after the git clone.
+
+````
+git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+````
+![Screenshot from 2023-09-20 18-41-26](https://github.com/lalithlochanr/pes_pd/assets/108328466/dac22d25-b3ee-42e6-b73a-7edf945e5043)
+
+````
+magic -T sky130A.tech sky130_inv.mag &
+````
+
+![Screenshot from 2023-09-20 18-56-13](https://github.com/lalithlochanr/pes_pd/assets/108328466/3c312ac4-1fc2-45aa-881a-b4cf47e8a042)
+
+![Screenshot from 2023-09-20 18-56-30](https://github.com/lalithlochanr/pes_pd/assets/108328466/456f880f-fbf2-40e9-a027-2186719ed190)  
 
 
+
+* Spice deck creation for CMOS inverter
+(VTC - SPICE simulations)
+
+- Spice deck -Contains the connectivity information, inputs that has to be given to the simulation, tap points.
+
+    -Component Connectivity
+    -Component values.
+     (ideally pmos >= 2*nmos)
+    -Identify nodes.
+    -Name nodes
+
+  ![Screenshot from 2023-09-20 18-45-20](https://github.com/lalithlochanr/pes_pd/assets/108328466/9789d123-9bed-40c7-bd11-31ab07f3e3bf)
+
+![Screenshot from 2023-09-20 18-45-34](https://github.com/lalithlochanr/pes_pd/assets/108328466/d219dc3e-069f-4484-82cd-16dfa924870d)
+
+![Screenshot from 2023-09-20 18-45-40](https://github.com/lalithlochanr/pes_pd/assets/108328466/b8edbd05-6c09-4cd9-a100-302165db34c8)
+
+
+- SPICE waveform
+![Screenshot from 2023-09-20 18-46-04](https://github.com/lalithlochanr/pes_pd/assets/108328466/2191e6b4-2938-46cc-96e3-052a3c50f50e)
+
+* Switching Threshold Vm
+
+![Screenshot from 2023-09-20 18-49-06](https://github.com/lalithlochanr/pes_pd/assets/108328466/e58aadc1-0b32-4d16-9a03-677817d724d3)
+
+![Screenshot from 2023-09-20 18-49-17](https://github.com/lalithlochanr/pes_pd/assets/108328466/3c318f0a-23fd-44b7-bbdc-fb6a65119573)
+
+![Screenshot from 2023-09-20 18-49-23](https://github.com/lalithlochanr/pes_pd/assets/108328466/272f48f7-aac2-4953-b6f9-89be6d7818a5)
+
+![Screenshot from 2023-09-20 18-49-43](https://github.com/lalithlochanr/pes_pd/assets/108328466/31864140-9cd2-4c38-9713-aff6f7ef6e24)
+
+![Screenshot from 2023-09-20 18-49-50](https://github.com/lalithlochanr/pes_pd/assets/108328466/fea7c30d-e34c-4565-a524-514f86cce904)
+
+</details>
+
+
+<details>
+  <summary> Inception of Layout</summary>
+
+* CMOS fabrication process
+
+![Screenshot from 2023-09-20 19-00-03](https://github.com/lalithlochanr/pes_pd/assets/108328466/c6479499-4103-43c4-81f6-0861de264a2f)  
+
+- Lightly Doped Drain (LDD)
+  - The primary purpose of LDD formation is to reduce short-channel effects and improve the performance and reliability of these transistors.
+
+- Layout
+````
+magic -T sky130A.tech sky130_inv.mag &
+````
+![Screenshot from 2023-09-20 19-13-18](https://github.com/lalithlochanr/pes_pd/assets/108328466/81c6d944-9adf-4549-8a3c-6e8299e9af51)
+
+![Screenshot from 2023-09-20 19-15-04](https://github.com/lalithlochanr/pes_pd/assets/108328466/6cf97197-3ae7-4c72-abeb-d0ebab2e259d)
+
+![Screenshot from 2023-09-20 19-16-24](https://github.com/lalithlochanr/pes_pd/assets/108328466/629ae544-f38e-4633-89de-4c43d4dd7f91)
+
+![Screenshot from 2023-09-20 19-16-46](https://github.com/lalithlochanr/pes_pd/assets/108328466/ae35bb1f-3ae7-4eb0-80d1-0db5f27c5347)
+
+![Screenshot from 2023-09-20 19-16-34](https://github.com/lalithlochanr/pes_pd/assets/108328466/3a67563d-de0a-4e07-a9c2-c74547852fe2)
   
 </details>
+
