@@ -41,9 +41,6 @@
 <details>
   <summary>How to talk to computers </summary>
 
-<details>
-  <summary>Introduction to QFN-48 Package, chip, pads, core, die and IPs</summary>
-
 1. QFN-48 Package:
    - QFN stands for "Quad Flat No-Lead."
    - It is a surface-mount integrated circuit (IC) package.
@@ -69,13 +66,8 @@
    - IPs in the context of electronics refer to pre-designed and pre-verified functional blocks or modules that can be integrated into a chip.
    - These can include processor cores, memory blocks, or specialized functions like communication interfaces.
    - Using IPs can speed up chip development and reduce design complexity.
-  
-</details>
 
-<details>
-  <summary>RISC-V flow</summar>
-
-    * Flow:
+* Flow:
     
   ![Screenshot 2023-09-18 103611](https://github.com/lalithlochanr/pes_pd/assets/108328466/a0323dbe-8072-4dcf-9f5d-f7dda3059180)  
 
@@ -85,7 +77,6 @@
 
 </details>
 
-</details>
 
 <details>
   <summary> SoC Design & Openlane </summary>
