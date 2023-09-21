@@ -825,7 +825,15 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 - Cross-talk induced delta delay refers to the additional time delay introduced in digital circuits due to unwanted electromagnetic interference or coupling between adjacent signal lines. This phenomenon can lead to signal integrity issues, where the switching of one signal affects the timing or integrity of another signal, potentially causing errors or performance degradation. Engineers employ various techniques, including shielding, routing separation, and signal isolation, to mitigate cross-talk-induced delta delay and ensure reliable and predictable operation of digital systems.
 
 ![Screenshot from 2023-09-21 04-53-35](https://github.com/lalithlochanr/pes_pd/assets/108328466/52a079a2-c018-4b1e-9994-d8f097bd448f)
-  
+
+- create two file one is pre_sra.conf and my_base.sdc
+- save pre_sra.conf in loaction ~/Desktop/work/tools/openlane_working_dir/openlane
+- save my_base.sdc in location ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/sr
+
+  ![Screenshot from 2023-09-21 18-08-27](https://github.com/lalithlochanr/pes_pd/assets/108328466/cf88995c-d09b-4ba6-862d-67f0c8e22b2d)
+  ![Screenshot from 2023-09-21 18-09-17](https://github.com/lalithlochanr/pes_pd/assets/108328466/e1215ed9-b236-47df-9ab8-f02b65855d62)
+
+
 </details>
 
 <details>
@@ -847,11 +855,14 @@ read_db pico_cts.db
 read_verilog /openLANE_flow/designs/picorv32a/runs/18-09_12-32/results/synthesis/picorv32a.synthesis_cts.v
 read_liberty -max $::env(LIB_SLOWEST)
 read_liberty -max $::env(LIB_FASTEST)
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
 set_propagated_clock [all_clocks]
 report_checks -path_delay min_max -format full_clock_expanded -digits 4
 ````
-![Screenshot from 2023-09-21 05-22-01](https://github.com/lalithlochanr/pes_pd/assets/108328466/387eb941-25e3-49eb-8a6f-fa8aaa3b61fa)
-</details>
+![Screenshot from 2023-09-21 18-30-03](https://github.com/lalithlochanr/pes_pd/assets/108328466/5a8ec773-4eed-4707-9edc-056fac41bb31)
+![Screenshot from 2023-09-21 18-30-48](https://github.com/lalithlochanr/pes_pd/assets/108328466/c98ff361-38e7-4a63-a329-864443db4aed)
+![Screenshot from 2023-09-21 18-37-26](https://github.com/lalithlochanr/pes_pd/assets/108328466/06197329-d69f-44a1-ae64-0c72d0efe315)
+
 
 
 # Day 5- Final steps for RTL2GDS using tritonRoute and openSTA
@@ -895,7 +906,9 @@ and so on.
   gen_pdn
   run_routing
   ````
-  
+
+![Screenshot from 2023-09-21 18-49-14](https://github.com/lalithlochanr/pes_pd/assets/108328466/e7c73026-654b-4d7e-9fc9-b6813add5a95)
+
 ![Screenshot from 2023-09-21 05-46-38](https://github.com/lalithlochanr/pes_pd/assets/108328466/296bae45-6f99-4fc7-9cef-d9cb4a9812a0)
 
   * Triton Routing:
