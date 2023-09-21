@@ -884,7 +884,9 @@ and so on.
 
 <details>
   <summary> Power Distribution & Network Routing  </summary>
+
   - In openlane,
+ 
   ````
   echo $::env(CURRENT_DEF)
   gen_pdn
