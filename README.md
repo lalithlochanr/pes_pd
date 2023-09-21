@@ -710,9 +710,10 @@ similarly,
     ````
     less tracks.info
     ````
-    ![Screenshot from 2023-09-21 00-57-57](https://github.com/lalithlochanr/pes_pd/assets/108328466/1d4ff8b6-4b9b-426f-9e6e-92fb7d998aff)
+    
+  ![Screenshot from 2023-09-21 00-57-57](https://github.com/lalithlochanr/pes_pd/assets/108328466/1d4ff8b6-4b9b-426f-9e6e-92fb7d998aff)
 
-    ![Screenshot from 2023-09-21 00-57-39](https://github.com/lalithlochanr/pes_pd/assets/108328466/ae025ebb-21c2-43d0-b879-d839e93caf39)
+   ![Screenshot from 2023-09-21 00-57-39](https://github.com/lalithlochanr/pes_pd/assets/108328466/ae025ebb-21c2-43d0-b879-d839e93caf39)
     
  - 1st value indicates the offset and 2nd value indicates the pitch along provided direction
  - press g in layout to get grid
@@ -792,5 +793,118 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ![Screenshot from 2023-09-21 04-30-37](https://github.com/lalithlochanr/pes_pd/assets/108328466/8afb6e5d-c2d4-4063-b6cf-3ad75f295071)
 ![Screenshot from 2023-09-21 04-23-02](https://github.com/lalithlochanr/pes_pd/assets/108328466/a85fcb40-9ad7-4dd0-beb5-7b75ab2ac6f8)
 ![Screenshot from 2023-09-21 04-25-04](https://github.com/lalithlochanr/pes_pd/assets/108328466/797a770d-d487-4e25-a7ad-d6e41c3dba49)
+  
+</details>
+
+<details>
+  <summary> Timing analysis with ideal clocks using openSTA </summary>
+- Setup time analysis
+  Setup time analysis is a fundamental aspect of digital circuit design and timing analysis. It refers to the assessment and verification of the minimum amount of time that a data input signal must be stable and available before the active edge of a clock signal (typically the rising edge) for proper and reliable operation of a flip-flop or other sequential logic element.  
+
+1. Setup Time: Setup time is the minimum time interval before the clock edge when a data input must be stable and valid to ensure correct data capture by a flip-flop or latch, preventing setup violations and potential data errors.
+
+2. Hold Time: Hold time is the minimum time interval after the clock edge during which a data input must remain stable and unchanged to prevent data corruption or hold-time violations within a flip-flop or latch.
+
+![Screenshot from 2023-09-21 04-40-18](https://github.com/lalithlochanr/pes_pd/assets/108328466/c40d5798-935a-4a03-9467-18a41ee352d3)
+![Screenshot from 2023-09-21 04-35-46](https://github.com/lalithlochanr/pes_pd/assets/108328466/e26b48df-fece-434b-b06a-ca449915ce7e)
+![Screenshot from 2023-09-21 04-35-58](https://github.com/lalithlochanr/pes_pd/assets/108328466/68d11775-3985-424c-ae16-5552fa6ce1e4)
+![Screenshot from 2023-09-21 04-37-00](https://github.com/lalithlochanr/pes_pd/assets/108328466/8607a4cd-5cfe-4f23-b747-6178ba498f15)
+![Screenshot from 2023-09-21 04-37-12](https://github.com/lalithlochanr/pes_pd/assets/108328466/f788d439-11aa-47c8-970f-619d67bba1fa)
+  
+</details>
+<details>
+  <summary> Clock Tree Synthesis(CTS)</summary>
+ - Clock Tree Synthesis (CTS) is a crucial step in digital integrated circuit design. It involves the generation of an optimized and efficient network of clock distribution paths within a chip, ensuring that the clock signal reaches all sequential elements simultaneously and with minimal skew. CTS minimizes clock distribution delays, reduces clock skew, and aligns clock arrival times at flip-flops, enhancing overall chip performance, reliability, and the ability to meet stringent timing requirements. By carefully balancing and buffering the clock signals, CTS plays a vital role in achieving reliable and high-performance digital systems.
+
+![Screenshot from 2023-09-21 04-48-23](https://github.com/lalithlochanr/pes_pd/assets/108328466/44b6788c-d156-48c5-b60b-834def99352b)
+
+- Clock net shielding and buffering are employed in integrated circuit design to mitigate clock skew, reduce signal interference, and ensure consistent clock distribution. Shielding protects the clock signal from external noise, while buffering amplifies the clock to maintain signal integrity and synchronize its arrival at various destinations.
+![Screenshot from 2023-09-21 04-48-49](https://github.com/lalithlochanr/pes_pd/assets/108328466/7355c534-f6d7-4cac-9eb4-ce9afd90cec7)
+![Screenshot from 2023-09-21 04-49-00](https://github.com/lalithlochanr/pes_pd/assets/108328466/76041a13-1a96-46f2-8dfd-095dc0a73286)
+
+- Cross-talk induced delta delay refers to the additional time delay introduced in digital circuits due to unwanted electromagnetic interference or coupling between adjacent signal lines. This phenomenon can lead to signal integrity issues, where the switching of one signal affects the timing or integrity of another signal, potentially causing errors or performance degradation. Engineers employ various techniques, including shielding, routing separation, and signal isolation, to mitigate cross-talk-induced delta delay and ensure reliable and predictable operation of digital systems.
+
+![Screenshot from 2023-09-21 04-53-35](https://github.com/lalithlochanr/pes_pd/assets/108328466/52a079a2-c018-4b1e-9994-d8f097bd448f)
+  
+</details>
+
+<details>
+  <summary> Timing analysis with real clocks using openSTA </summary>
+
+![Screenshot from 2023-09-21 04-55-17](https://github.com/lalithlochanr/pes_pd/assets/108328466/7cc24c7d-99f1-42c0-bc59-0c4ea5b5388c)
+![Screenshot from 2023-09-21 04-55-28](https://github.com/lalithlochanr/pes_pd/assets/108328466/3bccc554-e77c-4612-98d3-6d677acc7964)
+![Screenshot from 2023-09-21 04-56-09](https://github.com/lalithlochanr/pes_pd/assets/108328466/d365a142-cb24-47ad-a382-f263dd2966d3)
+![Screenshot from 2023-09-21 04-55-45](https://github.com/lalithlochanr/pes_pd/assets/108328466/606865a3-2f5b-455b-a505-80f43d8ae538)
+
+In openlane,
+````
+run_cts
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/18-09_12-32/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/18-09_12-32/results/cts/picorv32a.cts.def
+write_db pico_cts.db
+read_db pico_cts.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/18-09_12-32/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty -max $::env(LIB_SLOWEST)
+read_liberty -max $::env(LIB_FASTEST)
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+````
+![Screenshot from 2023-09-21 05-22-01](https://github.com/lalithlochanr/pes_pd/assets/108328466/387eb941-25e3-49eb-8a6f-fa8aaa3b61fa)
+</details>
+
+
+# Day 5- Final steps for RTL2GDS using tritonRoute and openSTA
+
+<details>
+  <summary> Introduction to Maze Routing & Design Rule Check</summary>
+- Maze Routing
+  Maze routing is a process used in electronic design automation to find optimal paths for interconnections on a printed circuit board or integrated circuit. It navigates through a grid of obstacles, such as existing wiring or components, to establish efficient and interference-free routes for signals, ensuring reliable connectivity and meeting design constraints. Maze routing algorithms aim to minimize wirelength, delay, and congestion while complying with the specified design rules.
+
+![Screenshot from 2023-09-21 05-29-53](https://github.com/lalithlochanr/pes_pd/assets/108328466/75caffb3-90b2-4bd8-b67f-ce565168e951)
+![Screenshot from 2023-09-21 05-30-20](https://github.com/lalithlochanr/pes_pd/assets/108328466/b9f8ccaa-d9dc-48c0-9885-fd98cc530a95)
+![Screenshot from 2023-09-21 05-30-38](https://github.com/lalithlochanr/pes_pd/assets/108328466/ac2ba1e8-8fcb-45bb-a13a-b747eee5bf76)
+
+- DRC check
+  Design Rule Checking (DRC) is a critical step in semiconductor chip design to ensure that the layout adheres to the specified design rules and constraints.
+1. Spacing Rules: Ensure minimum and maximum spacing between adjacent features to prevent short circuits and defects.
+   
+2. Width Rules: Verify feature widths, such as metal traces and gates, fall within acceptable limits to maintain proper dimensions.
+
+3. Enclosure Rules: Confirm that certain features are enclosed correctly to prevent unintended interactions.
+
+4. Area Rules: Ensure specific layout areas adhere to defined constraints, including density rules.
+
+5. Via Rules: Check that vias meet size, placement, and enclosure requirements for vertical connections between metal layers.
+
+and so on.
+
+  
+</details>
+
+<details>
+  <summary> Power Distribution & Network Routing  </summary>
+  - In openlane,
+  ````
+  echo $::env(CURRENT_DEF)
+  gen_pdn
+  run_routing
+  ````
+  
+![Screenshot from 2023-09-21 05-46-38](https://github.com/lalithlochanr/pes_pd/assets/108328466/296bae45-6f99-4fc7-9cef-d9cb4a9812a0)
+
+  * Triton Routing
+    TritonRoute is an open-source, multi-objective, detailed router used in the field of electronic design automation (EDA). It is primarily designed for digital integrated circuit (IC) routing and is known for its versatility and efficiency in producing high-quality chip layouts. TritonRoute employs advanced algorithms to tackle complex routing challenges, such as minimizing wirelength, congestion, and achieving optimal performance within specified design constraints. As an open-source tool, TritonRoute has gained popularity in the semiconductor industry, enabling designers to access a powerful routing solution while contributing to its ongoing development and improvement.
+    
+![Screenshot from 2023-09-21 05-46-23](https://github.com/lalithlochanr/pes_pd/assets/108328466/c6f2096a-58f9-49be-935f-3e40708b6f9d)
+![Screenshot from 2023-09-21 05-48-05](https://github.com/lalithlochanr/pes_pd/assets/108328466/9f469b71-f8ee-431e-97a9-4dcc201d64f1)
+
+* SPEF extractor
+  An SPEF extractor is a critical tool in semiconductor design that generates Standard Parasitic Exchange Format (SPEF) files from chip layouts. These files capture essential parasitic capacitance and resistance data, crucial for accurate timing analysis and chip performance verification.
+
+````
+cd Desktop/work/tools/SPEF_Extractor
+python3 /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/18-09_12-32/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/18-09_12-32/results/routing/picorv32a.def
+````
   
 </details>
