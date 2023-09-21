@@ -863,8 +863,7 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 ![Screenshot from 2023-09-21 18-30-48](https://github.com/lalithlochanr/pes_pd/assets/108328466/c98ff361-38e7-4a63-a329-864443db4aed)
 ![Screenshot from 2023-09-21 18-37-26](https://github.com/lalithlochanr/pes_pd/assets/108328466/06197329-d69f-44a1-ae64-0c72d0efe315)
 
-
-
+</details>
 
 # Day 5- Final steps for RTL2GDS using tritonRoute and openSTA
 
