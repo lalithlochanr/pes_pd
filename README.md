@@ -865,6 +865,7 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 
 
 
+
 # Day 5- Final steps for RTL2GDS using tritonRoute and openSTA
 
 <details>
