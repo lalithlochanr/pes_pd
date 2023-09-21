@@ -858,14 +858,14 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 
 <details>
   <summary> Introduction to Maze Routing & Design Rule Check</summary>
-- Maze Routing
+- Maze Routing:  
   Maze routing is a process used in electronic design automation to find optimal paths for interconnections on a printed circuit board or integrated circuit. It navigates through a grid of obstacles, such as existing wiring or components, to establish efficient and interference-free routes for signals, ensuring reliable connectivity and meeting design constraints. Maze routing algorithms aim to minimize wirelength, delay, and congestion while complying with the specified design rules.
 
 ![Screenshot from 2023-09-21 05-29-53](https://github.com/lalithlochanr/pes_pd/assets/108328466/75caffb3-90b2-4bd8-b67f-ce565168e951)
 ![Screenshot from 2023-09-21 05-30-20](https://github.com/lalithlochanr/pes_pd/assets/108328466/b9f8ccaa-d9dc-48c0-9885-fd98cc530a95)
 ![Screenshot from 2023-09-21 05-30-38](https://github.com/lalithlochanr/pes_pd/assets/108328466/ac2ba1e8-8fcb-45bb-a13a-b747eee5bf76)
 
-- DRC check
+- DRC check:  
   Design Rule Checking (DRC) is a critical step in semiconductor chip design to ensure that the layout adheres to the specified design rules and constraints.
 1. Spacing Rules: Ensure minimum and maximum spacing between adjacent features to prevent short circuits and defects.
    
@@ -896,13 +896,13 @@ and so on.
   
 ![Screenshot from 2023-09-21 05-46-38](https://github.com/lalithlochanr/pes_pd/assets/108328466/296bae45-6f99-4fc7-9cef-d9cb4a9812a0)
 
-  * Triton Routing
+  * Triton Routing:  
     TritonRoute is an open-source, multi-objective, detailed router used in the field of electronic design automation (EDA). It is primarily designed for digital integrated circuit (IC) routing and is known for its versatility and efficiency in producing high-quality chip layouts. TritonRoute employs advanced algorithms to tackle complex routing challenges, such as minimizing wirelength, congestion, and achieving optimal performance within specified design constraints. As an open-source tool, TritonRoute has gained popularity in the semiconductor industry, enabling designers to access a powerful routing solution while contributing to its ongoing development and improvement.
     
 ![Screenshot from 2023-09-21 05-46-23](https://github.com/lalithlochanr/pes_pd/assets/108328466/c6f2096a-58f9-49be-935f-3e40708b6f9d)
 ![Screenshot from 2023-09-21 05-48-05](https://github.com/lalithlochanr/pes_pd/assets/108328466/9f469b71-f8ee-431e-97a9-4dcc201d64f1)
 
-* SPEF extractor
+* SPEF extractor :    
   An SPEF extractor is a critical tool in semiconductor design that generates Standard Parasitic Exchange Format (SPEF) files from chip layouts. These files capture essential parasitic capacitance and resistance data, crucial for accurate timing analysis and chip performance verification.
 
 ````
