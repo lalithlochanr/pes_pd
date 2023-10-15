@@ -708,10 +708,8 @@ similarly,
     * Convert grid info into track info
     - Magic Layout into a std cell LEF
   
-    ```` 
-   
-    less tracks.info 
-    
+    ````   
+      less tracks.info   
     ````
     
   ![Screenshot from 2023-09-21 00-57-57](https://github.com/lalithlochanr/pes_pd/assets/108328466/1d4ff8b6-4b9b-426f-9e6e-92fb7d998aff)
