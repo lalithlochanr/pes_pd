@@ -705,9 +705,10 @@ similarly,
   
 <details>
     <summary> Timing modelling using delay tables</summary>
-    * Convert grid info into track info
-      - Magic Layout into a std cell LEF
   
+   * Convert grid info into track info
+      - Magic Layout into a std cell LEF
+      
     ```` 
     less tracks.info   
     ````
